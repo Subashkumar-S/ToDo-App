@@ -1,0 +1,126 @@
+@import "./variables.scss";
+
+.todo-info {
+  width: $width;
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  font-size: $font-size;
+  font-family: $font-family;
+  background-color: $very-dark-desaturated-blue;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  // box-shadow: 0px 16px 40px rgb(17, 17, 17);
+
+  &.dark-mode {
+    background-color: $very-dark-desaturated-blue;
+    color: $dark-grayish-blue;
+
+    ul li a:hover{
+      &:hover {
+        color: $light-grayish-blue;
+      }
+    }
+
+    button {
+      &:hover{
+        color: $light-grayish-blue;
+      }
+    }
+  }
+
+  &.light-mode {
+    background-color: $very-light-gray;
+    color: $dark-grayish-blue;
+    ul li a:hover{
+      &:hover {
+        color: $very-dark-grayish-blue;
+      }
+    }
+
+    button {
+      &:hover{
+        color: $very-dark-grayish-blue;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    width: 80vw;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+
+    li {
+
+      a{
+        text-decoration: none;
+        color: $dark-grayish-blue;
+
+        &.active {
+          color: $bright-blue;
+        }
+        &:hover {
+          color: $light-grayish-blue;
+        }
+
+        
+  
+      }
+
+  
+
+      
+    }
+  }
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $dark-grayish-blue;
+
+    &:hover {
+      cursor: pointer;
+      
+    }
+  }
+}
+
+.toggle-menu {
+  margin-top: 16px;
+  height: $height;
+  width: 80vw;
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $dark-grayish-blue;
+  border-radius: 6px;
+  background-color: $very-dark-desaturated-blue;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 0;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $dark-grayish-blue;
+
+        &.active {
+          color: $bright-blue;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import "./variables.scss";
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  &.dark-mode {
+    background-color: $very-dark-blue;
+    background-image: $dark-mode-bg-image-desktop;
+
+    @media screen and (max-width: $breakpoint-md) {
+        background-image: $dark-mode-bg-image-mobile;
+      }
+  }
+
+  &.light-mode {
+    background-color: $very-light-grayish-blue;
+    background-image: $light-mode-bg-image-desktop;
+
+    @media screen and (max-width: $breakpoint-md) {
+        background-image: $light-mode-bg-image-mobile;
+      }    
+  }
+}

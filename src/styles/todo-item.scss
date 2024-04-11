@@ -1,0 +1,71 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+.todo-item {
+  width: $width;
+  min-height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 24px;
+  font-size: $font-size;
+  font-family: $font-family;
+  
+
+
+  &.dark-mode {
+    border-bottom: 1px solid $very-dark-grayish-blue;
+    color: $light-grayish-blue;
+
+    div button{
+      @include button-styles($very-dark-desaturated-blue, $very-light-grayish-blue)
+    };
+  }
+  
+  &.light-mode {
+    border-bottom: 1px solid $light-grayish-blue;
+    color: $very-dark-grayish-blue;
+
+    div button{
+      @include button-styles($very-light-gray, $dark-grayish-blue)
+    };
+  }
+
+
+  @media screen and (max-width: $breakpoint-md) {
+    width: 80vw;
+    align-items: center;
+  }
+
+  div {
+    display: flex;
+    gap: 24px;
+
+
+    p{
+      &.completed{
+        color: $dark-grayish-blue;
+        text-decoration: line-through;
+      }
+    }
+  }
+  .close-btn {
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    .close-btn {
+        display: none;
+    }
+    &:hover {
+      cursor: pointer;
+      .close-btn {
+        display: flex;
+        cursor: pointer;
+      }
+    }
+  }
+}

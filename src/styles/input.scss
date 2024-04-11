@@ -1,0 +1,57 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+form {
+  width: $width;
+  display: flex;
+  height: $height;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-top: 2.5rem;
+  padding: 24px;
+  border: 5px solid linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-radius: 6px;
+  box-shadow: 0px 16px 48px $very-dark-blue;
+
+  &.dark-mode  {
+    background: $very-dark-desaturated-blue;
+
+    button {
+      @include button-styles(
+        $very-dark-desaturated-blue,
+        $very-light-grayish-blue
+      );
+    }
+
+  }
+  
+  &.light-mode {
+    background-color: $very-light-gray;
+
+    button {
+      @include button-styles(
+        $very-light-gray,
+        $dark-grayish-blue
+      );
+    }
+  }
+
+
+  @media screen and (max-width: $breakpoint-md) {
+    width: 80vw;
+  }
+
+  
+
+  input {
+    background: transparent;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $light-grayish-blue;
+  }
+}
+
+

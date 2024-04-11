@@ -1,0 +1,29 @@
+@import "./variables.scss"; 
+.heading {
+  width: $width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $very-light-gray;
+
+  @media screen and (max-width: $breakpoint-md) {
+    width: 80vw;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    color: $very-light-gray;
+    font-family: $font-family;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 16px;
+  }
+  button {
+    background: transparent;
+    border: none;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
